@@ -13,6 +13,9 @@ dependencies = [
   "torch==2.14.1",
 ]
 
+[project.scripts]
+caixa = "caixa_inteligente.cli:main"
+
 [dependency-groups]
 dev = ["pytest>=9,<10", "ruff>=0.14,<1"]
 
