@@ -1,0 +1,39 @@
+[project]
+name = "caixa-inteligente"
+version = "0.1.0"
+description = "Protótipo de reconhecimento de um produto por imagem com DINOv2 e MySQL"
+readme = "README.md"
+requires-python = ">=3.15,<3.16"
+dependencies = [
+  "numpy>=2.4,<3",
+  "pillow>=12,<14",
+  "pymysql[rsa]>=1.1,<2",
+  "python-dotenv>=1.1,<2",
+  "sqlalchemy>=2.0,<3",
+  "torch==2.14.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=9,<10", "ruff>=0.14,<1"]
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py315"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,13 @@
+.git
+.venv
+.uv-cache
+.python-cache
+.pytest_cache
+.ruff_cache
+__pycache__
+.env
+data
+artifacts
+.cache
+tests
+.prototype-transfer.ps1
