@@ -17,6 +17,10 @@ Para mais variedade, há uma [amostra RPC com 200 produtos em 17 grupos](docs/rp
 Use `--gallery artifacts/gallery-market.npz` para os testes com a galeria ampliada.
 Os [resultados locais do RPC](docs/rpc-validation.md) registram a instalação e a avaliação.
 
+O [laboratório híbrido](experiments/README.md) compara DINOv2 em CUDA, OCR e fusão
+nas mesmas imagens do dataset, em ambiente separado. Essa pipeline experimental
+somente sugere candidatos e mantém todos os casos em revisão, até ser calibrada.
+
 ## Executar com Docker
 
 Instale Docker com Compose v2. No PowerShell, dentro desta pasta:

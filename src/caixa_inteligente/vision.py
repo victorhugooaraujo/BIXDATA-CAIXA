@@ -260,6 +260,18 @@ class Gallery:
                 raise ValueError("Gallery dimensions do not match its metadata.")
             return gallery
 
+    def rank(self, vector: np.ndarray) -> list[Candidate]:
+        """Rank every distinct SKU, for experiments that combine image and text."""
+        query = _unit_vector(vector, dimension=self._embeddings.shape[1])
+        similarities = np.clip(self._embeddings @ query, -1.0, 1.0)
+        by_sku: dict[str, float] = {}
+        for sku, similarity in zip(self._skus, similarities, strict=True):
+            by_sku[sku] = max(by_sku.get(sku, -1.0), float(similarity))
+        return [
+            Candidate(sku, score)
+            for sku, score in sorted(by_sku.items(), key=lambda item: (-item[1], item[0]))
+        ]
+
     def recognize(
         self, vector: np.ndarray, min_similarity: float = 0.75, min_margin: float = 0.05
     ) -> RecognitionResult:
@@ -267,15 +279,10 @@ class Gallery:
             raise ValueError("min_similarity must be finite and between -1 and 1.")
         if not math.isfinite(min_margin) or not 0 <= min_margin <= 2:
             raise ValueError("min_margin must be finite and between 0 and 2.")
-        query = _unit_vector(vector, dimension=self._embeddings.shape[1])
-        similarities = np.clip(self._embeddings @ query, -1.0, 1.0)
-        by_sku: dict[str, float] = {}
-        for sku, similarity in zip(self._skus, similarities, strict=True):
-            by_sku[sku] = max(by_sku.get(sku, -1.0), float(similarity))
-        ranked = sorted(by_sku.items(), key=lambda item: (-item[1], item[0]))
-        candidates = [Candidate(sku, score) for sku, score in ranked[:3]]
-        top_sku, best = ranked[0]
-        margin = best - ranked[1][1] if len(ranked) > 1 else 0.0
+        ranked = self.rank(vector)
+        candidates = ranked[:3]
+        top_sku, best = ranked[0].sku, ranked[0].similarity
+        margin = best - ranked[1].similarity if len(ranked) > 1 else 0.0
         if len(ranked) == 1:
             reason = "single_class"
         elif best < min_similarity:
