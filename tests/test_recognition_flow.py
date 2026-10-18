@@ -69,3 +69,28 @@ def test_ambiguous_image_does_not_fetch_a_price(recognition_args, monkeypatch, c
     assert result["product"] is None
     assert result["reason"] == "ambiguous"
     assert result["requires_review"] is True
+
+
+def test_index_can_combine_separate_dataset_directories(tmp_path, monkeypatch):
+    monkeypatch.setattr("caixa_inteligente.vision.DinoV2Encoder", FakeEncoder)
+    roots = [tmp_path / "grocery", tmp_path / "rpc"]
+    for root, sku in zip(roots, ["6", "rpc-006"], strict=True):
+        folder = root / sku
+        folder.mkdir(parents=True)
+        (folder / "fixture.jpg").write_bytes(b"used-by-fake-encoder")
+    gallery_path = tmp_path / "market.npz"
+    assert (
+        main(
+            [
+                "index",
+                "--images",
+                *(str(root) for root in roots),
+                "--gallery",
+                str(gallery_path),
+            ]
+        )
+        == 0
+    )
+    gallery = Gallery.load(gallery_path, expected_signature=FakeEncoder.signature)
+    assert gallery.sample_count == 2
+    assert gallery.class_count == 2

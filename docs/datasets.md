@@ -1,5 +1,9 @@
 # Dados do primeiro protótipo
 
+A instalação ampliada está em [RPC: 200 produtos em 17 grupos](rpc-dataset.md), com
+4.000 recortes separados em train/val/test e uma galeria combinada com as frutas iniciais.
+As instruções abaixo preservam a demonstração original com três classes.
+
 O protótipo recebe uma imagem com um produto e retorna uma sugestão de SKU do catálogo
 cadastrado. O dataset permite verificar o fluxo e medir reconhecimento em imagens
 separadas do treino. Uma foto contendo vários produtos exigirá detecção ou segmentação
@@ -10,7 +14,7 @@ antes da classificação; isso fica para outra etapa.
 | Dataset | Uso adequado | Acesso e licença informados pelos autores | Decisão |
 | --- | --- | --- | --- |
 | [Grocery Store Dataset](https://github.com/marcusklasson/GroceryStoreDataset) | Classificação, 81 classes finas e 42 amplas, frutas, vegetais e embalagens | Imagens e splits no GitHub; [LICENSE MIT do repositório](https://github.com/marcusklasson/GroceryStoreDataset/blob/master/LICENSE) | Escolhido para a demonstração pequena |
-| [RPC](https://rpc-dataset.github.io/) | Produtos individuais no treino e múltiplos produtos no checkout | 15 GB; [Kaggle indicado pelos autores](https://www.kaggle.com/datasets/diyer22/retail-product-checkout-dataset); CC BY-NC-SA 4.0 | Candidato para pesquisa posterior de múltiplos itens; licença não comercial |
+| [RPC](https://rpc-dataset.github.io/) | Produtos individuais no treino e múltiplos produtos no checkout | 15 GB; [Kaggle indicado pelos autores](https://www.kaggle.com/datasets/diyer22/retail-product-checkout-dataset); CC BY-NC-SA 4.0 | Subset de 200 SKUs instalado; val/test adaptados com recortes anotados para classificação |
 | [SKU110K](https://github.com/eg4000/SKU110K_CVPR19) | Detectar e contar itens em prateleiras densas | Download S3/Drive no README; uso acadêmico e não comercial | Não fornece o catálogo de identidade de produtos necessário para o caixa |
 
 O Grocery Store Dataset contém produtos coletados em mercados estrangeiros. Esses

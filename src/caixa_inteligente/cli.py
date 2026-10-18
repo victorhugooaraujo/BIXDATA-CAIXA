@@ -36,11 +36,25 @@ def parser() -> argparse.ArgumentParser:
     download.add_argument("--classes", type=int, nargs="+", default=[6, 16, 63])
     download.add_argument("--train-per-class", type=int, default=10)
     download.add_argument("--eval-per-class", type=int, default=5)
+    rpc = commands.add_parser("dataset-rpc", help="Instalar subset RPC com 200 produtos")
+    rpc.add_argument("--output", type=Path, default=Path("data/rpc"))
+    rpc.add_argument("--cache", type=Path, default=Path(".cache/rpc"))
+    rpc.add_argument("--train-per-class", type=int, default=12)
+    rpc.add_argument("--eval-per-class", type=int, default=4)
+    rpc.add_argument("--workers", type=int, default=8)
+    rpc.add_argument("--seed", type=int, default=42)
+    rpc.add_argument("--source", choices=["huggingface", "kaggle"], default="huggingface")
     commands.add_parser("init-db", help="Criar tabelas no MySQL")
     catalog = commands.add_parser("catalog-import", help="Cadastrar/atualizar SKUs e preços CSV")
     catalog.add_argument("csv", type=Path)
     index = commands.add_parser("index", help="Extrair embeddings somente das imagens de treino")
-    index.add_argument("--images", type=Path, default=Path("data/grocery/train"))
+    index.add_argument(
+        "--images",
+        type=Path,
+        nargs="+",
+        default=[Path("data/grocery/train")],
+        help="Uma ou mais pastas de treino, com subpastas por SKU",
+    )
     index.add_argument("--gallery", type=Path, default=Path("artifacts/gallery.npz"))
     index.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
     for name in ["recognize", "evaluate"]:
@@ -57,6 +71,19 @@ def parser() -> argparse.ArgumentParser:
 
 
 def run(args: argparse.Namespace) -> dict:
+    if args.command == "dataset-rpc":
+        from caixa_inteligente.rpc_dataset import download_rpc_subset
+
+        return download_rpc_subset(
+            args.output,
+            cache_dir=args.cache,
+            train_per_class=args.train_per_class,
+            eval_per_class=args.eval_per_class,
+            workers=args.workers,
+            seed=args.seed,
+            source=args.source,
+            progress=lambda message: print(message, file=sys.stderr, flush=True),
+        )
     if args.command == "dataset-download":
         from caixa_inteligente.dataset import download_grocery_subset
 
@@ -80,7 +107,7 @@ def run(args: argparse.Namespace) -> dict:
 
     encoder = DinoV2Encoder(device=args.device)
     if args.command == "index":
-        samples = image_samples(args.images)
+        samples = [sample for directory in args.images for sample in image_samples(directory)]
         gallery = Gallery.build(samples, encoder)
         gallery.save(args.gallery)
         return {"gallery": str(args.gallery), "images": len(samples)}
