@@ -93,6 +93,9 @@ Isso produz **203 classes e 2.430 referências**. Use somente treino para gerar 
 ajuste limiares em val e reserve test para medir o resultado final. Uma instalação que
 não tenha a amostra Grocery pode indexar só `data/rpc/train`, com 200 classes.
 
+Consulte o [registro da instalação e avaliação local](rpc-validation.md) para tamanho,
+verificações e resultados. A instalação entregue já tem os recortes e a galeria combinada.
+
 Para consultar preços e reconhecer uma foto com a nova galeria:
 
 ```powershell

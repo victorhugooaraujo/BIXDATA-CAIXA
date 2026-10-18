@@ -15,6 +15,7 @@ o fluxo completo. O downloader exige destino vazio e não sobrescreve um dataset
 Para mais variedade, há uma [amostra RPC com 200 produtos em 17 grupos](docs/rpc-dataset.md):
 4.000 recortes e uma galeria combinada de mercado com 203 classes.
 Use `--gallery artifacts/gallery-market.npz` para os testes com a galeria ampliada.
+Os [resultados locais do RPC](docs/rpc-validation.md) registram a instalação e a avaliação.
 
 ## Executar com Docker
 
