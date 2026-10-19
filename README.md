@@ -21,6 +21,7 @@ O [laboratório híbrido](experiments/README.md) compara DINOv2 em CUDA, OCR e f
 nas mesmas imagens do dataset, em ambiente separado. Essa pipeline experimental
 somente sugere candidatos e mantém todos os casos em revisão, até ser calibrada.
 Veja os [resultados do primeiro experimento híbrido](docs/hybrid-prototype.md).
+Há também uma [validação com conhecidos e desconhecidos, sem cadastro manual](docs/recognition-validation.md).
 
 ## Executar com Docker
 

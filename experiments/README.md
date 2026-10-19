@@ -1,5 +1,8 @@
 # Laboratório híbrido — separado do baseline
 
+A [validação sem cadastro manual](../docs/recognition-validation.md) inclui
+800 consultas de teste e 20 SKUs removidos das referências para medir desconhecidos.
+
 Python 3.12 + PyTorch CUDA 13.0 + RapidOCR/ONNX Runtime CPU, fixados no uv.lock
 desta pasta. O projeto principal continua Python 3.15 com PyTorch CPU.
 
