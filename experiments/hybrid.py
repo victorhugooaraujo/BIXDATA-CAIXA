@@ -34,6 +34,11 @@ def main():
     parser.add_argument("--gallery", type=Path, default=Path("artifacts/hybrid-v1"))
     parser.add_argument("--cache", type=Path, default=Path(".cache/ocr"))
     parser.add_argument("--references-per-sku", type=int, default=3)
+    parser.add_argument(
+        "--visual-gallery",
+        type=Path,
+        help="Reutilizar embeddings de uma galeria auditada de treino (mesmo encoder)",
+    )
     parser.add_argument("--queries-per-sku", type=int, default=4)
     parser.add_argument("--device", choices=["cuda", "cpu"], default="cuda")
     parser.add_argument("--image", type=Path)
@@ -77,15 +82,28 @@ def main():
                     "path": str(path.resolve()),
                 }
             )
-            vectors.append(encoder.encode(path))
+            if args.visual_gallery is None:
+                vectors.append(encoder.encode(path))
             if index % 50 == 0:
                 print(f"Referências: {index}/{len(samples)}", flush=True)
         import numpy as np
 
+        if args.visual_gallery is None:
+            visual = Gallery([sku for sku, _ in samples], np.stack(vectors), encoder.signature)
+        else:
+            # Validate the archive before selecting only this dataset's SKUs.
+            Gallery.load(args.visual_gallery, expected_signature=encoder.signature)
+            with np.load(args.visual_gallery, allow_pickle=False) as archive:
+                labels = archive["skus"].tolist()
+                selected = np.array([sku in counts for sku in labels])
+                selected_labels = [sku for sku in labels if sku in counts]
+                if set(selected_labels) != set(counts):
+                    raise ValueError("A galeria reutilizada não cobre todos os SKUs de treino.")
+                visual = Gallery(
+                    selected_labels, archive["embeddings"][selected], encoder.signature
+                )
         args.gallery.mkdir(parents=True)
-        Gallery([sku for sku, _ in samples], np.stack(vectors), encoder.signature).save(
-            args.gallery / "visual.npz"
-        )
+        visual.save(args.gallery / "visual.npz")
         TextGallery(references, reader.signature).save(args.gallery / "text.json")
         write(
             args.gallery / "manifest.json",
@@ -95,11 +113,15 @@ def main():
                 "source_split": "train",
                 "classes": len(counts),
                 "references": len(samples),
+                "visual_references": visual.sample_count,
                 "references_with_text": sum(bool(ref["text"]) for ref in references),
                 "visual_sha256": sha(args.gallery / "visual.npz"),
                 "text_sha256": sha(args.gallery / "text.json"),
                 "encoder": encoder.signature,
                 "ocr": reader.signature,
+                "reused_visual_gallery_sha256": (
+                    sha(args.visual_gallery) if args.visual_gallery else None
+                ),
             },
         )
         print((args.gallery / "manifest.json").read_text(encoding="utf-8"))
