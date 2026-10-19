@@ -4,6 +4,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+from uuid import uuid4
 
 import numpy as np
 from PIL import Image, ImageOps
@@ -63,9 +64,20 @@ class OcrReader:
                 lines.append({"text": text, "score": score, "box": box.tolist()})
         result = {"signature": self.signature, "sha256": digest, "lines": lines}
         self.cache.mkdir(parents=True, exist_ok=True)
-        temporary = destination.with_suffix(".tmp")
+        temporary = destination.with_name(f"{destination.stem}.{uuid4().hex}.tmp")
         temporary.write_text(json.dumps(result, ensure_ascii=False), encoding="utf-8")
-        temporary.replace(destination)
+        try:
+            temporary.replace(destination)
+        except PermissionError:
+            # Windows may deny simultaneous replacement after another worker publishes.
+            # Accept only a complete entry for exactly this content and configuration.
+            if not destination.exists():
+                raise
+            published = json.loads(destination.read_text(encoding="utf-8"))
+            if published.get("signature") != self.signature or published.get("sha256") != digest:
+                raise ValueError("Publicação concorrente de cache incompatível.") from None
+            temporary.unlink(missing_ok=True)
+            return published
         return result
 
 

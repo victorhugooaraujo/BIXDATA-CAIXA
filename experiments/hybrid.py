@@ -28,6 +28,8 @@ def write(path, value):
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=["index", "recognize", "evaluate"])
     parser.add_argument("--dataset", type=Path, default=Path("data/rpc"))
