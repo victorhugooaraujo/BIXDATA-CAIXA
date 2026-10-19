@@ -25,6 +25,25 @@ e recusa substituir a galeria existente. Use `--references-per-sku 12` e outro
 destino para comparar com todas as referências RPC preparadas. A galeria inclui
 os IDs do dataset, dispensando cadastro manual e banco para o experimento.
 
+A galeria local `artifacts/hybrid-rpc-12visual-3text` aproveita as 12 referências
+visuais já auditadas e mantém três referências para OCR por SKU. Para reconstruir
+esse experimento sem reextrair os embeddings existentes:
+
+```powershell
+uv run --project experiments --locked python experiments/hybrid.py index --dataset data/rpc --visual-gallery artifacts/gallery-market.npz --gallery artifacts/hybrid-rpc-12visual-3text
+uv run --project experiments --locked python experiments/hybrid.py evaluate --dataset data/rpc --gallery artifacts/hybrid-rpc-12visual-3text --report artifacts/hybrid-rpc-12visual-validation-v1.json
+```
+
+`--visual-gallery` deve apontar apenas para uma galeria auditada de **treino**:
+o arquivo NPZ antigo não contém os hashes das imagens originais e, sozinho, não
+permite comprovar a separação dos splits. Nesta instalação, sua origem de treino
+está documentada em `docs/rpc-validation.md`. Classes externas ao dataset são
+excluídas; encoder incompatível e SKUs ausentes são rejeitados.
+
+Os [resultados medidos](../docs/hybrid-prototype.md) mostram ganho na primeira
+sugestão de 49,0% para 55,5% em 800 consultas de validação. Não são precisão de
+cobrança automática nem garantia de desempenho em novas embalagens.
+
 Os fingerprints textuais são gerados por OCR das mesmas referências visuais;
 nenhum nome de classe é usado como se tivesse sido lido. Cache por hash do conteúdo
 e versão do OCR preserva textos, caixas e scores. Índices têm assinatura e hashes.
