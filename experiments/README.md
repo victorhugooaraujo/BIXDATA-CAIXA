@@ -1,5 +1,9 @@
 # Laboratório híbrido — separado do baseline
 
+A [demonstração funcional assistida](../docs/functional-demo.md) usa este ambiente
+CUDA, com classificador treinado, detector de embalagem, OCR e interface web local.
+Execute `start-demo.ps1` na raiz; fotos e pesos permanecem fora do Git.
+
 A [validação sem cadastro manual](../docs/recognition-validation.md) inclui
 800 consultas de teste e 20 SKUs removidos das referências para medir desconhecidos.
 

@@ -1,5 +1,10 @@
 # Caixa inteligente — protótipo 0.1
 
+**Demonstração assistida com interface local:** execute `.\start-demo.ps1` e abra
+`http://127.0.0.1:8765`. Usa suas fotos + RPC no treinamento, localização da embalagem,
+DINOv2 e evidência OCR. Veja [como executar, resultados e limites](docs/functional-demo.md).
+Os passos abaixo continuam documentando o baseline por terminal.
+
 Reconhece **um produto por imagem**, sem código de barras, usando DINOv2 pré-treinado e uma
 galeria de exemplos. O MySQL fornece nome e preço. Imagens ambíguas retornam `requires_review`.
 Interface inicial por terminal; sem pagamentos ou contagem de vários itens.

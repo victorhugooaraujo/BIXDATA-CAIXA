@@ -1,0 +1,330 @@
+{
+  "date": "2026-10-27",
+  "source_commit": "28db37b",
+  "training": {
+    "schema": 1,
+    "encoder": {
+      "model": "facebookresearch/dinov2:7764ea0f912e53c92e82eb78a2a1631e92725fc8:dinov2_vits14",
+      "preprocessing": "exif-rgb-resize-short256-bicubic-center224-imagenet-v1"
+    },
+    "training_samples": 2445,
+    "training_per_group": {
+      "user": 45,
+      "public": 2400
+    },
+    "classes": 211,
+    "classifier_sha256": "7b4c5aa17146f7f5af27f0338bd73339b7950254da570988ccaea40becc511b0",
+    "dataset_fingerprint": "5ca5bdd298564be438637d4e055d9324ae7a1dc89e6f35cb1ed2af73a15ce395",
+    "validation": [
+      {
+        "regularization": 0.01,
+        "user": 0.9090909090909091,
+        "public": 0.54875
+      },
+      {
+        "regularization": 0.1,
+        "user": 0.9090909090909091,
+        "public": 0.56125
+      },
+      {
+        "regularization": 1.0,
+        "user": 0.8181818181818182,
+        "public": 0.55875
+      },
+      {
+        "regularization": 10.0,
+        "user": 0.7272727272727273,
+        "public": 0.53375
+      }
+    ],
+    "selected_regularization": 0.1,
+    "metrics": {
+      "user_val": {
+        "images": 11,
+        "correct": 10,
+        "top3_correct": 10
+      },
+      "user_test": {
+        "images": 21,
+        "correct": 19,
+        "top3_correct": 20
+      },
+      "public_val": {
+        "images": 800,
+        "correct": 449,
+        "top3_correct": 568
+      },
+      "public_test": {
+        "images": 800,
+        "correct": 441,
+        "top3_correct": 578
+      },
+      "unknown_val": {
+        "images": 15,
+        "automatic_acceptances": 0,
+        "policy": "Every image requires review; no unknown-rejection calibration claim"
+      },
+      "unknown_test": {
+        "images": 15,
+        "automatic_acceptances": 0,
+        "policy": "Every image requires review; no unknown-rejection calibration claim"
+      }
+    },
+    "limitations": [
+      "Same physical products and session in user splits",
+      "RPC research license; no commercial clearance",
+      "No barcode used",
+      "Classifier metrics use prepared crops; detector evaluated separately",
+      "No commercial reliability claim"
+    ]
+  },
+  "http": {
+    "images": 21,
+    "top1_correct": 18,
+    "localized": 19,
+    "automatic_sales": 0,
+    "ack_retry_one_line": true,
+    "p50_seconds": 3.1869202999951085,
+    "p95_seconds": 6.844637300004251,
+    "limitations": "21 views from the same 11 physical products/session, not commercial validation",
+    "results": [
+      {
+        "id": "001_IMG_3090",
+        "expected": "demo-nikito",
+        "top1": "demo-nikito",
+        "sku": "demo-nikito",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 5.843479000002844,
+        "event_id": "c65d1f25856c4dd6882d668e8c1656dd"
+      },
+      {
+        "id": "007_IMG_3096",
+        "expected": "demo-nikito",
+        "top1": "demo-nikito",
+        "sku": "demo-nikito",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 2.317613599996548,
+        "event_id": "b89aac34e41949c78439d84d03fb05fe"
+      },
+      {
+        "id": "011_IMG_3100",
+        "expected": "demo-bauducco",
+        "top1": "demo-bauducco",
+        "sku": "demo-bauducco",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 1.6650456999923335,
+        "event_id": "dabd978dc98346738748a2042b7d7a8b"
+      },
+      {
+        "id": "013_IMG_3102",
+        "expected": "demo-bauducco",
+        "top1": "demo-bauducco",
+        "sku": "demo-bauducco",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.5005832000024384,
+        "event_id": "c35add66cb4f4f55b4a7df764792f263"
+      },
+      {
+        "id": "020_IMG_3109",
+        "expected": "demo-oreo",
+        "top1": "demo-oreo",
+        "sku": "demo-oreo",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.6392616999946767,
+        "event_id": "7396c54690d7435cb9f1f2b0f0efa0bd"
+      },
+      {
+        "id": "026_IMG_3115",
+        "expected": "demo-oreo",
+        "top1": "demo-oreo",
+        "sku": "demo-oreo",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 1.851794100002735,
+        "event_id": "6a9c5704ab2a4ad3ac6185ef041b1aeb"
+      },
+      {
+        "id": "029_IMG_3118",
+        "expected": "demo-toddy",
+        "top1": "demo-toddy",
+        "sku": "demo-toddy",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.0725498999963747,
+        "event_id": "161e9c3a60fb4065a2fa9e447be30602"
+      },
+      {
+        "id": "030_IMG_3119",
+        "expected": "demo-toddy",
+        "top1": "demo-toddy",
+        "sku": "demo-toddy",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 5.515569299997878,
+        "event_id": "032d38461dd04b56be721d033ba5cb01"
+      },
+      {
+        "id": "037_IMG_3126",
+        "expected": "demo-bono",
+        "top1": "demo-nikito",
+        "sku": "demo-nikito",
+        "correct": false,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.892220699999598,
+        "event_id": "a32de39d78d442ebbfad7aca44030c59"
+      },
+      {
+        "id": "038_IMG_3127",
+        "expected": "demo-bono",
+        "top1": "demo-bono",
+        "sku": "demo-bono",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 7.329131299993605,
+        "event_id": "0acfd66de4724c8ba5a4a8eea9feba19"
+      },
+      {
+        "id": "043_IMG_3132",
+        "expected": "demo-rexona",
+        "top1": "demo-rexona",
+        "sku": null,
+        "correct": true,
+        "reason": "unknown",
+        "ocr_status": "ok",
+        "seconds": 3.1869202999951085,
+        "event_id": "d2a2a9511ace47afa6bef61da4b220fc"
+      },
+      {
+        "id": "046_IMG_3135",
+        "expected": "demo-rexona",
+        "top1": "demo-rexona",
+        "sku": "demo-rexona",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 6.844637300004251,
+        "event_id": "cdc52b554ba94ec68be02e9b0ed8b652"
+      },
+      {
+        "id": "052_IMG_3142",
+        "expected": "demo-colgate",
+        "top1": "demo-colgate",
+        "sku": "demo-colgate",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.8146513999963645,
+        "event_id": "66a7123f0f5048dbb5450f469f34e8a9"
+      },
+      {
+        "id": "055_IMG_3145",
+        "expected": "demo-colgate",
+        "top1": "demo-colgate",
+        "sku": "demo-colgate",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.167349399998784,
+        "event_id": "ec2480518fb64ae0a56b165d301ab515"
+      },
+      {
+        "id": "059_IMG_3149",
+        "expected": "demo-coca",
+        "top1": "demo-coca",
+        "sku": "demo-coca",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.2505842999962624,
+        "event_id": "2d44b94ee141458cb96404cccf447417"
+      },
+      {
+        "id": "060_IMG_3150",
+        "expected": "demo-coca",
+        "top1": "demo-coca",
+        "sku": "demo-coca",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 3.030338300013682,
+        "event_id": "2909fd27c3a547078e0fe1ca1686da49"
+      },
+      {
+        "id": "063_IMG_3153",
+        "expected": "demo-nutella",
+        "top1": "demo-nutella",
+        "sku": "demo-nutella",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 1.735634900003788,
+        "event_id": "e99fa65dfacf4f17b07d313675157a08"
+      },
+      {
+        "id": "064_IMG_3154",
+        "expected": "demo-nutella",
+        "top1": "demo-nutella",
+        "sku": "demo-nutella",
+        "correct": true,
+        "reason": "review",
+        "ocr_status": "ok",
+        "seconds": 2.9745630999968853,
+        "event_id": "7f08a694d5f84a8c9e403289440d2540"
+      },
+      {
+        "id": "072_IMG_3162",
+        "expected": "demo-laka",
+        "top1": null,
+        "sku": null,
+        "correct": false,
+        "reason": "reposition",
+        "ocr_status": null,
+        "seconds": 0.39755280000099447,
+        "event_id": "b736891a544a43a48ac24dd9427d5f6a"
+      },
+      {
+        "id": "073_IMG_3163",
+        "expected": "demo-laka",
+        "top1": null,
+        "sku": null,
+        "correct": false,
+        "reason": "reposition",
+        "ocr_status": null,
+        "seconds": 0.3410364000010304,
+        "event_id": "d424864c2a624a6b90532a2919afa7ad"
+      },
+      {
+        "id": "076_IMG_3167",
+        "expected": "demo-casaflor",
+        "top1": "demo-casaflor",
+        "sku": null,
+        "correct": true,
+        "reason": "unknown",
+        "ocr_status": "ok",
+        "seconds": 5.373336399992695,
+        "event_id": "55cac720d20642ae88edc8c10b162fe6"
+      }
+    ]
+  },
+  "regression": {
+    "passed": 131,
+    "skipped": 1,
+    "skip_reason": "MySQL integration requires TEST_DATABASE_URL"
+  },
+  "production_ready": false
+}
