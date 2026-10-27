@@ -23,6 +23,13 @@ somente sugere candidatos e mantém todos os casos em revisão, até ser calibra
 Veja os [resultados do primeiro experimento híbrido](docs/hybrid-prototype.md).
 Há também uma [validação com conhecidos e desconhecidos, sem cadastro manual](docs/recognition-validation.md).
 
+O [plano de implementação comercial](docs/production-implementation-plan.md) dimensiona
+um protótipo de 1 caixa e a expansão para 4 lojas, com 4 caixas por loja e cerca de
+20 mil SKUs. Inclui níveis local, RunPod e servidor, critérios de acerto/latência,
+integração PDV, [auditoria de segurança](docs/security-audit-plan.md) e
+[backlog por marcos](docs/implementation-backlog.md). É planejamento, não homologação
+comercial do protótipo atual.
+
 ## Executar com Docker
 
 Instale Docker com Compose v2. No PowerShell, dentro desta pasta:
