@@ -1,0 +1,1088 @@
+{
+  "schema": 1,
+  "source_zip_sha256": "af52e261f623b04575c54fbb11d19dbc2aa656da0ee76e7048dad0e7e3b0bfe0",
+  "scope": "11 physical products, same capture session; not commercial validation",
+  "catalog": [
+    {
+      "sku": "demo-nikito",
+      "name": "Vitarella Nikito chocolate",
+      "size": null,
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-bauducco",
+      "name": "Bauducco Choco Biscuit meio amargo 80 g",
+      "size": "80 g",
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-oreo",
+      "name": "Oreo Original — embalagem fotografada",
+      "size": null,
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-toddy",
+      "name": "Toddy Original — embalagem fotografada",
+      "size": null,
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-bono",
+      "name": "Nestlé Bono chocolate — embalagem fotografada",
+      "size": null,
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-rexona",
+      "name": "Rexona Men — aerossol fotografado",
+      "size": null,
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-colgate",
+      "name": "Colgate Total Whitening — embalagem fotografada",
+      "size": null,
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-coca",
+      "name": "Coca-Cola original menos açúcar — garrafa fotografada",
+      "size": null,
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-nutella",
+      "name": "Ferrero Nutella 350 g",
+      "size": "350 g",
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-laka",
+      "name": "Lacta Laka Oreo 80 g",
+      "size": "80 g",
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    },
+    {
+      "sku": "demo-casaflor",
+      "name": "CasaFlor Mistérios do Oriente 1 L",
+      "size": "1 L",
+      "price_cents": 100,
+      "price_note": "Preço fictício uniforme; sem vínculo com o mercado."
+    }
+  ],
+  "samples": [
+    {
+      "id": "001_IMG_3090",
+      "sku": "demo-nikito",
+      "sha256": "77c2f51b56e15834e35689b5af779f8d0dea1de736e53b9a05b7b84152503f77",
+      "box": [
+        0.40346561008029513,
+        0.2283673858642578,
+        0.5871796332465278,
+        0.8181603495279948
+      ],
+      "split": "test",
+      "source_sha256": "8649936ae372f5b7635e0b1acf78b9e26e969fa426dc0f9ca087bd12257cc9d1"
+    },
+    {
+      "id": "002_IMG_3091",
+      "sku": "demo-nikito",
+      "sha256": "4ed0df465ecf8ff8b83d1b6edc47bbed07d01d5f6d7292b2a385721bd3f1676d",
+      "box": [
+        0.38507259792751736,
+        0.2398803202311198,
+        0.595752427842882,
+        0.777938232421875
+      ],
+      "split": "train",
+      "source_sha256": "e96121b9859d5601ae11bdc4dbeeebfe23878d243b65484cc076012a38ec42dd"
+    },
+    {
+      "id": "003_IMG_3092",
+      "sku": "demo-nikito",
+      "sha256": "1a3e0c4eaba1858834b90a6745514e879c9f11789d5d47eee9379b0d325aa642",
+      "box": [
+        0.38117767333984376,
+        0.24165936787923178,
+        0.5997216796875,
+        0.7744824727376302
+      ],
+      "split": "train",
+      "source_sha256": "3e3bd0a8697502f12dbc6f0dc4b3f0b12b97961ef08bc8977a8fd4df272f94fc"
+    },
+    {
+      "id": "004_IMG_3093",
+      "sku": "demo-nikito",
+      "sha256": "3287c598a192a2c5ffe5d7eab70c2342f6eac326bffe165c2eab60f75b4e9a6b",
+      "box": [
+        0.40278272840711804,
+        0.26967206319173176,
+        0.5700400797526042,
+        0.7963907877604167
+      ],
+      "split": "train",
+      "source_sha256": "ccfc639c4438622e46779e01e95b7fd3f129f6af7d56ce40ac8872fb6dfc79ab"
+    },
+    {
+      "id": "005_IMG_3094",
+      "sku": "demo-nikito",
+      "sha256": "f913b4e25d557b8e9c70c7816165edb0f5532568d67cff013c30bcf024a603b4",
+      "box": [
+        0.42094302707248266,
+        0.2706685384114583,
+        0.5965991889105903,
+        0.8005614217122395
+      ],
+      "split": "train",
+      "source_sha256": "842884dde25f46450610be5e0b29f5469483d6e8eef961f1ee5a50b0ab9c47fb"
+    },
+    {
+      "id": "006_IMG_3095",
+      "sku": "demo-nikito",
+      "sha256": "de06267f001c8ad51f324501427353f7d6dbb81c79dc10d0fb2bc4226a488bad",
+      "box": [
+        0.44117957221137155,
+        0.2588593292236328,
+        0.5972866482204862,
+        0.786302744547526
+      ],
+      "split": "val",
+      "source_sha256": "3644ca7714694f00a5ce4bea00a78524d547b004c795301a9e981994add6fce4"
+    },
+    {
+      "id": "007_IMG_3096",
+      "sku": "demo-nikito",
+      "sha256": "a7c60de7adcc61e4ea7cfc8e774ab685cf1ce9ffe3abede8c397d79291970fc6",
+      "box": [
+        0.39435031467013887,
+        0.26394554138183596,
+        0.5560609266493055,
+        0.7900055440266928
+      ],
+      "split": "test",
+      "source_sha256": "dc9aefe4ca4763e852e77781407770358ed97d3534635db82f3ee58e5b1db27d"
+    },
+    {
+      "id": "008_IMG_3097",
+      "sku": "demo-nikito",
+      "sha256": "dd5bdbfe7471a8b07c510cfa1603f1b9e40b7d94aa6da329ef5983b4487d33db",
+      "box": [
+        0.41539764404296875,
+        0.2546128336588542,
+        0.6301355658637153,
+        0.8045818583170573
+      ],
+      "split": "train",
+      "source_sha256": "ebdcda70542f398a6e92a6481dc32bde4850eeac2e8471f444f0532bec2536ed"
+    },
+    {
+      "id": "009_IMG_3098",
+      "sku": "demo-nikito",
+      "sha256": "ec8575c2359b53883301b87bee0cf38f62cfba42981d979833cd21d7fde55770",
+      "box": [
+        0.4095486111111111,
+        0.26514884948730466,
+        0.5779563395182291,
+        0.8237491861979167
+      ],
+      "split": "train",
+      "source_sha256": "f5b3e4f818c1e63ea2f664d68b2f5402aa4bfd027c3b997c91f592f4264ac2b3"
+    },
+    {
+      "id": "010_IMG_3099",
+      "sku": "demo-bauducco",
+      "sha256": "55dea38a0a51da5256fabd1cbbe115696c7cb5265d3a314bdfe253e0a1cb8914",
+      "box": [
+        0.35567545572916665,
+        0.16742477416992188,
+        0.6646028645833333,
+        0.87099365234375
+      ],
+      "split": "train",
+      "source_sha256": "200ba962f6b6a28417da6e28407a6123d08e5e2bbf35134e3d82332686b5d627"
+    },
+    {
+      "id": "011_IMG_3100",
+      "sku": "demo-bauducco",
+      "sha256": "63de69039bb24ed772fd1f1b43a8a69b8e47d0bce1bcce83bb7d5062da6a38e8",
+      "box": [
+        0.3643354966905382,
+        0.21383626302083333,
+        0.5740328640407986,
+        0.8947285970052083
+      ],
+      "split": "test",
+      "source_sha256": "8baa39528e92c1f70f295db20866b3713f12eb4a86cf6755f0490f86be545add"
+    },
+    {
+      "id": "012_IMG_3101",
+      "sku": "demo-bauducco",
+      "sha256": "4e2cc6e6061e18e9c257f113ce8356d58c44b5b7fffe482413a4aa8b00b95875",
+      "box": [
+        0.42986260308159724,
+        0.20628512064615886,
+        0.584849853515625,
+        0.8865982055664062
+      ],
+      "split": "train",
+      "source_sha256": "acf19e721d2aa9134d29e0afca1af150e0176df98f2ce6d64d96ee17a3e7452f"
+    },
+    {
+      "id": "013_IMG_3102",
+      "sku": "demo-bauducco",
+      "sha256": "a2fd6179d17379d33ca325ed6697d366993f7491ad19d2faa214664dc5064909",
+      "box": [
+        0.3939550103081597,
+        0.2229772694905599,
+        0.61273193359375,
+        0.9023951212565104
+      ],
+      "split": "test",
+      "source_sha256": "b8e654e9763bdc59843ce55b8e57b2b7517121c30d0e3187afbdd38d5e37e2b0"
+    },
+    {
+      "id": "014_IMG_3103",
+      "sku": "demo-bauducco",
+      "sha256": "284eed729ba35f8968db8529f0d49c9ed0f92fa89462ebc64eb6d3221d01ad31",
+      "box": [
+        0.3440925089518229,
+        0.16283878326416015,
+        0.6713380940755208,
+        0.8978256225585938
+      ],
+      "split": "train",
+      "source_sha256": "3eb88f674bce573b78a76ebcdd3968a691e63915a8e308ea085686aa5d4d4958"
+    },
+    {
+      "id": "015_IMG_3104",
+      "sku": "demo-bauducco",
+      "sha256": "4748878e6ef4da4def474e6336bc2917a7b788c361e2ce57731768503a34915f",
+      "box": [
+        0.3487091403537326,
+        0.19423908233642578,
+        0.6265911187065972,
+        0.895391845703125
+      ],
+      "split": "val",
+      "source_sha256": "57e1b51d76f9353e646ddce9f92faf8cc19584de4d18c628ca68c85735eb47f6"
+    },
+    {
+      "id": "016_IMG_3105",
+      "sku": "demo-bauducco",
+      "sha256": "309f6a4f2ffa2bf3ce3323a036063310201a837a01b009f384b558c2e15011c0",
+      "box": [
+        0.40754574245876735,
+        0.24126986185709634,
+        0.5560030788845486,
+        0.9486477661132813
+      ],
+      "split": "train",
+      "source_sha256": "031d89a30db91eb83978868795fcb785a431fb4ef0c0c6a8fe63a5528186152e"
+    },
+    {
+      "id": "017_IMG_3106",
+      "sku": "demo-bauducco",
+      "sha256": "60709c91e392d479c4f8f774527a06f1ebea581c0dc3a3c5c0db83299c241fb1",
+      "box": [
+        0.3368606906467014,
+        0.2227417500813802,
+        0.5997873263888889,
+        0.9669139607747396
+      ],
+      "split": "train",
+      "source_sha256": "200aa6f9a24a22a7eedc7b066bb56821f0ecd2a287783efedf9dc8d8399debfa"
+    },
+    {
+      "id": "018_IMG_3107",
+      "sku": "demo-bauducco",
+      "sha256": "f06139e7ed0d0ef34d163b1d9334ec4c401b1a5381ddbc2b0eadb6ad0522b62d",
+      "box": [
+        0.36440338134765626,
+        0.26488665262858074,
+        0.6395870632595486,
+        0.8811498006184896
+      ],
+      "split": "train",
+      "source_sha256": "b27e2a8f24bd3878eb6c83082ae72bcb00acd0b9c49685fc4f097eeeeebc00ed"
+    },
+    {
+      "id": "019_IMG_3108",
+      "sku": "demo-oreo",
+      "sha256": "b2c0c25d8520177db3607d3748ea1a76d86e1c4b11226d988e39cabf4bdd178c",
+      "box": [
+        0.34863956027560766,
+        0.1863214111328125,
+        0.6078542751736111,
+        0.8808290608723959
+      ],
+      "split": "train",
+      "source_sha256": "8beaaf5f3999f78ad9ae12dccb3277d71016225e9b7e7b00942cbffea71cfff9"
+    },
+    {
+      "id": "020_IMG_3109",
+      "sku": "demo-oreo",
+      "sha256": "cef34907e0b4e2f80c658cc7086b9e095d492637b615ca1168ebd75109aac4cd",
+      "box": [
+        0.3400004408094618,
+        0.2078896713256836,
+        0.5852643500434028,
+        0.9018728637695312
+      ],
+      "split": "test",
+      "source_sha256": "28b45a2a2baa1edb75d32854ed55f9d3083ae09ccdec81a97e56f91827a4d139"
+    },
+    {
+      "id": "021_IMG_3110",
+      "sku": "demo-oreo",
+      "sha256": "7d2d136d8f05d5c4ead9dc582c9f46e6e78a7899bb4a66a6ca6edcf86412671a",
+      "box": [
+        0.40048719618055556,
+        0.20817410786946614,
+        0.5491895209418403,
+        0.9378751627604167
+      ],
+      "split": "train",
+      "source_sha256": "6bc2a7fdf40af5ef596dc942a683516a73912354ef181aeea52101cae9bb2496"
+    },
+    {
+      "id": "022_IMG_3111",
+      "sku": "demo-oreo",
+      "sha256": "36eba706a2456f6e6480123cfb26c91ede6388a7770d5fb67c0111ded0028bfd",
+      "box": [
+        0.39989532470703126,
+        0.22124471028645834,
+        0.6213954671223958,
+        0.9945445760091146
+      ],
+      "split": "train",
+      "source_sha256": "eb4464f1f776caea38ea3d5191e08fde8c7e63d00966ad4760b2213f6f4e6477"
+    },
+    {
+      "id": "023_IMG_3112",
+      "sku": "demo-oreo",
+      "sha256": "d071c9dc447c4c733cd807498a54e1d7fc954bacd7aa5b7ed55429e8325b0c56",
+      "box": [
+        0.3589175754123264,
+        0.2518420918782552,
+        0.61945068359375,
+        0.9379436238606771
+      ],
+      "split": "train",
+      "source_sha256": "40a5c1f679b05a810c5014774644e400b346e362afa48bc8fc10645c3d181b40"
+    },
+    {
+      "id": "024_IMG_3113",
+      "sku": "demo-oreo",
+      "sha256": "c2af31603c626ae7e314fc1236efc18e8ec0c594069fade9a6f5027f61d76150",
+      "box": [
+        0.4135158284505208,
+        0.24627950032552084,
+        0.6082208251953125,
+        0.925615234375
+      ],
+      "split": "train",
+      "source_sha256": "74c2146e97efd1030d773a356b5eea830ab24040308867c45f6e6cb60e3b22b5"
+    },
+    {
+      "id": "025_IMG_3114",
+      "sku": "demo-oreo",
+      "sha256": "e4ef54a52ad1122ace961b104af919fc19d8df38871ba8de78c192d2fff09891",
+      "box": [
+        0.3935533650716146,
+        0.24482444763183595,
+        0.5390233357747396,
+        0.9354647827148438
+      ],
+      "split": "train",
+      "source_sha256": "cf26c462c9a3d71a5626da82808de019c6dbc0350a3aa35129c11269b8a48aa1"
+    },
+    {
+      "id": "026_IMG_3115",
+      "sku": "demo-oreo",
+      "sha256": "a87cb67c3a729defdf17fa1a2a3c67591b3aa1172b642bca5000ba6887268683",
+      "box": [
+        0.36505279541015623,
+        0.27444547017415366,
+        0.5707558865017361,
+        0.9463904825846354
+      ],
+      "split": "test",
+      "source_sha256": "ab6e5432d0582d256b300a21c8aed99c851f2937e22485c7ea77d448dd50c2e1"
+    },
+    {
+      "id": "027_IMG_3116",
+      "sku": "demo-oreo",
+      "sha256": "ee888780ba285d7055288f08ea9f4c9fbbaf9647be76343a71b6c71937ea3657",
+      "box": [
+        0.34903191460503474,
+        0.29663322448730467,
+        0.6413544379340278,
+        0.925134785970052
+      ],
+      "split": "val",
+      "source_sha256": "2602b5b1ebbd12672afc7298cf1b39f0d540ea6d0f97b6f5d7bd44852f9ba638"
+    },
+    {
+      "id": "028_IMG_3117",
+      "sku": "demo-toddy",
+      "sha256": "4f737d269c437b14aa8cc058df8366242b0298b07d2621ef47aff76a0a6879f5",
+      "box": [
+        0.34904842800564234,
+        0.2230590057373047,
+        0.6574173312717014,
+        0.8774879964192709
+      ],
+      "split": "train",
+      "source_sha256": "e22b8016cdde84b1af3508c8591f7fc9fc1e96e6c89fbbfe5b56d8e794b80613"
+    },
+    {
+      "id": "029_IMG_3118",
+      "sku": "demo-toddy",
+      "sha256": "43e714ad227c934c4cc050934bb65d91b65da318a1c1c66bbff23bd68517d86b",
+      "box": [
+        0.38723931206597223,
+        0.23033485412597657,
+        0.626234605577257,
+        0.8487471516927083
+      ],
+      "split": "test",
+      "source_sha256": "d5b511f35bf6e153aaf7f6f69863a50f7415a54b971b1ff3aa02c7320b044373"
+    },
+    {
+      "id": "030_IMG_3119",
+      "sku": "demo-toddy",
+      "sha256": "b054163629d4e599b773a536ad5da427d429b427341738c481757c1058d09ce5",
+      "box": [
+        0.3757090250651042,
+        0.26322001139322915,
+        0.5898246256510417,
+        0.8725847371419271
+      ],
+      "split": "test",
+      "source_sha256": "3b119c71015b1e230b5fcf8d88aebbbb424e86665963d2ec1b574df362637652"
+    },
+    {
+      "id": "031_IMG_3120",
+      "sku": "demo-toddy",
+      "sha256": "c800fb8075bea32bf14fe6788a6c78764876052b86c255f9b71e4069c65cf264",
+      "box": [
+        0.38709937201605904,
+        0.28067629496256513,
+        0.6327793375651042,
+        0.8471592203776042
+      ],
+      "split": "train",
+      "source_sha256": "2ceee60522eda94911971cf463799718108ddc260847d26c1cb106a2e7f799f0"
+    },
+    {
+      "id": "032_IMG_3121",
+      "sku": "demo-toddy",
+      "sha256": "8e889cf6588a0709724c2c21739b05347b69bab452ab36a9d5d44ddba01be41b",
+      "box": [
+        0.3326003689236111,
+        0.30351778666178386,
+        0.6131605360243055,
+        0.8600265502929687
+      ],
+      "split": "val",
+      "source_sha256": "08f08f03470b144b1dfe37c7e09737a203fbeb90fba1784f487e72f3f25788bf"
+    },
+    {
+      "id": "033_IMG_3122",
+      "sku": "demo-toddy",
+      "sha256": "fc67c8e05c802ffd6bd5eb2659a920d2a8cb45590252fbc7469680b48105ed3a",
+      "box": [
+        0.3509208509657118,
+        0.28921165466308596,
+        0.5945358615451389,
+        0.8871177164713542
+      ],
+      "split": "train",
+      "source_sha256": "fc891aa9bad386bedc0570d8bd7b4ef5c9d63ad8954685aaca98b23d95b91a79"
+    },
+    {
+      "id": "034_IMG_3123",
+      "sku": "demo-toddy",
+      "sha256": "769f9eed4cbc3c4cd623947e375c9df8955f9b0dbf050a7fe5d5cf7760f88dc9",
+      "box": [
+        0.3368863593207465,
+        0.27471839904785156,
+        0.5870361328125,
+        0.9244749959309896
+      ],
+      "split": "train",
+      "source_sha256": "a9c666ceff3d1e929e7254289e855ad1359b136f3b206418151962f4e6de18ee"
+    },
+    {
+      "id": "035_IMG_3124",
+      "sku": "demo-toddy",
+      "sha256": "f509be67778d84b165ee5d38f84f5b234fd3649a9fde1bc7958ff4a4d2f6efae",
+      "box": [
+        0.2802625020345052,
+        0.29318890889485677,
+        0.5895654975043403,
+        0.8981027221679687
+      ],
+      "split": "train",
+      "source_sha256": "410cee5067d79598896dbe701b57aec2e2ce6a9334dbcdc9081ec8484f9fc6f6"
+    },
+    {
+      "id": "036_IMG_3125",
+      "sku": "demo-bono",
+      "sha256": "9086fa5639f0d604584ca8f40614fb04df090666159777dd2f54ea66eda6b9c6",
+      "box": [
+        0.350113525390625,
+        0.16163626352945965,
+        0.6195383029513889,
+        0.8645353190104167
+      ],
+      "split": "val",
+      "source_sha256": "b06015f0f9a8398df88a18c73c8346138529e30078ef90f69394c106b76de971"
+    },
+    {
+      "id": "037_IMG_3126",
+      "sku": "demo-bono",
+      "sha256": "ab169e075fffb29be726fe0693d6a4cc7fab20c2e920c984961054a33baead6e",
+      "box": [
+        0.3328677029079861,
+        0.175778325398763,
+        0.5664466688368055,
+        0.8976492309570312
+      ],
+      "split": "test",
+      "source_sha256": "15633c9152df25cb3f89804d1db26f2442505dc9028caa44b08447ff9ae805fc"
+    },
+    {
+      "id": "038_IMG_3127",
+      "sku": "demo-bono",
+      "sha256": "43742f503b4ecdcbf2768c8db36e8492584c0944ac7b80f6c3bdabdf866b662c",
+      "box": [
+        0.39644795735677085,
+        0.17617032368977864,
+        0.5457225884331597,
+        0.9024327596028646
+      ],
+      "split": "test",
+      "source_sha256": "f327d42bb83c11164f423164736bdc78307c1c56ed6e7ef96314747380536acc"
+    },
+    {
+      "id": "039_IMG_3128",
+      "sku": "demo-bono",
+      "sha256": "a798158ecdca471172efd07b78330a103d919f4b88b28fef2e00be51bc017f32",
+      "box": [
+        0.33599334716796875,
+        0.17590260823567708,
+        0.5709600151909722,
+        0.8812191772460938
+      ],
+      "split": "train",
+      "source_sha256": "63b8c63d2b4fb38afb1e888472d483eb8c5946502332ec4d0f00a14368764630"
+    },
+    {
+      "id": "040_IMG_3129",
+      "sku": "demo-bono",
+      "sha256": "ab7f5903fbf874b4abf2769d4216a69d86911b99dbaf4f1bb3754df61866dae1",
+      "box": [
+        0.3218429226345486,
+        0.22781321207682292,
+        0.5727645534939236,
+        0.9400584920247396
+      ],
+      "split": "train",
+      "source_sha256": "17b7d60bed56b79471c6765ee8c1ca8f66f7012e04ef06687158c8e6c15dc72e"
+    },
+    {
+      "id": "041_IMG_3130",
+      "sku": "demo-bono",
+      "sha256": "2b7d8bf3c80433547a290a17d90d34b7b52716b9a94cab25e2443bb87c9fb425",
+      "box": [
+        0.37506751166449653,
+        0.2464105478922526,
+        0.5510249159071181,
+        0.9922801717122396
+      ],
+      "split": "train",
+      "source_sha256": "aeb04aa41bc5f709ceee174c6185108a369a3d3cbe4e62546451bedd87e5f016"
+    },
+    {
+      "id": "042_IMG_3131",
+      "sku": "demo-bono",
+      "sha256": "30dc7b73600ae09bbc01c1ee05c706c3ec9c19688b874e2abe4a24b87273cfe5",
+      "box": [
+        0.3073410373263889,
+        0.1747945276896159,
+        0.6057965766059028,
+        0.9300386555989584
+      ],
+      "split": "train",
+      "source_sha256": "6c0bfb34c737fd19ba29345562073b0bcdc5a5e53b3e6b67b149b53e5ec42a76"
+    },
+    {
+      "id": "043_IMG_3132",
+      "sku": "demo-rexona",
+      "sha256": "613d6a475ae3271dbd8ff46b0459721ada7ed8f858e49a7d5e35b2edf93d1afb",
+      "box": [
+        0.36984018961588544,
+        0.28117642720540365,
+        0.5632693142361112,
+        0.8146123758951823
+      ],
+      "split": "test",
+      "source_sha256": "f00785394d7ddd476a392496626c76ac7118a319af77b527e1411ffc805baa84"
+    },
+    {
+      "id": "044_IMG_3133",
+      "sku": "demo-rexona",
+      "sha256": "9075059c5a67cd0909c5c369be6ba40b3b690eb7cb64635590f2e955f689b3ef",
+      "box": [
+        0.40210198296440974,
+        0.27165550231933594,
+        0.6017135281032986,
+        0.7970935567220052
+      ],
+      "split": "val",
+      "source_sha256": "d0fecbc7060e53ee243c4fe112f13a7fc94ad704adc41f1827dcfcf6604beb19"
+    },
+    {
+      "id": "045_IMG_3134",
+      "sku": "demo-rexona",
+      "sha256": "46adccf0ace6c6c7c5f0e3682c214ddba79c72c79aed3ee7d203e5bb6bc9c9e2",
+      "box": [
+        0.39112145317925345,
+        0.3244933827718099,
+        0.5823430040147569,
+        0.8389841206868489
+      ],
+      "split": "train",
+      "source_sha256": "57a6a017305271a5e54536d62ba89419c60a5f7800cc615be97fc07e6c7f235b"
+    },
+    {
+      "id": "046_IMG_3135",
+      "sku": "demo-rexona",
+      "sha256": "1242637d526a32c102dcafb540d2c08a0cac58877f6bc3ca7bb7333af831f4d0",
+      "box": [
+        0.35468519422743056,
+        0.3664385986328125,
+        0.5645003933376737,
+        0.8458874003092448
+      ],
+      "split": "test",
+      "source_sha256": "c3018459183efde7a63f709eb898c1a7b8d0eff69c868f19fff69ab999127658"
+    },
+    {
+      "id": "047_IMG_3136",
+      "sku": "demo-rexona",
+      "sha256": "a5dd35c917c1e30e6dc242dc06833d744d781a4edeb85905c059219172e5ec30",
+      "box": [
+        0.40887786865234377,
+        0.32580718994140623,
+        0.5954861789279514,
+        0.8299169413248698
+      ],
+      "split": "train",
+      "source_sha256": "c0caba6a798826a0b1831f6289c92f88fba0730699520b4258f83289ff740b3f"
+    },
+    {
+      "id": "048_IMG_3138",
+      "sku": "demo-colgate",
+      "sha256": "e78192dfc37e1cd656b4cfba246024c10b4289f844753b0e231bbe4b6f826b52",
+      "box": [
+        0.30701385498046874,
+        0.19317251841227215,
+        0.543407728407118,
+        0.8065589904785156
+      ],
+      "split": "val",
+      "source_sha256": "c572d67ef349a88309d3a87be629c5f920343c78e0e37cd826f50f864c1edc37"
+    },
+    {
+      "id": "049_IMG_3139",
+      "sku": "demo-colgate",
+      "sha256": "1e19164bf8911889e13f7b139ce42060c03b2cc1742b7a929c999be8162f5ddb",
+      "box": [
+        0.3218417697482639,
+        0.2265880330403646,
+        0.5930622694227431,
+        0.8534544881184896
+      ],
+      "split": "train",
+      "source_sha256": "f98dd8d84f27e139af310bbf511a307923d7f209bb438fdd5ac643b898a16447"
+    },
+    {
+      "id": "050_IMG_3140",
+      "sku": "demo-colgate",
+      "sha256": "70330fa5fe9c298f1c412ab355e150eecbb684386a5132ec3613ced07c7b11fe",
+      "box": [
+        0.3335833740234375,
+        0.2450701904296875,
+        0.5537383694118924,
+        0.8582553100585938
+      ],
+      "split": "train",
+      "source_sha256": "f7eabb14e0d705065df7da383c4cb3a0e57dad98ee81d9b2c2164e1a1ad4311a"
+    },
+    {
+      "id": "051_IMG_3141",
+      "sku": "demo-colgate",
+      "sha256": "468c62b1b2a68c8aa6eadadf62b38b1b97eee3bbf94a1ac097dc702bb18a3f3b",
+      "box": [
+        0.2757255384657118,
+        0.238438720703125,
+        0.5950694444444444,
+        0.8898434448242187
+      ],
+      "split": "train",
+      "source_sha256": "c7ee54a9358a3db13b86cd5eb42e0beaf1026b87394f8913a03d878b4f5f3d86"
+    },
+    {
+      "id": "052_IMG_3142",
+      "sku": "demo-colgate",
+      "sha256": "67c480c2b069af342e2a5a6184bec4cca6fb1a1faa37f250fe4fdfacf999eb2f",
+      "box": [
+        0.32199669731987846,
+        0.21441871643066407,
+        0.5749833848741319,
+        0.8193320719401042
+      ],
+      "split": "test",
+      "source_sha256": "017735439d1c112e73f7346d9f8b29d3755434c5f0f96c8ae7fd2df781295a78"
+    },
+    {
+      "id": "053_IMG_3143",
+      "sku": "demo-colgate",
+      "sha256": "5c7067e874a24904d92e676a3c15402633095c3e35985c894e2b297bc3518914",
+      "box": [
+        0.3673826429578993,
+        0.2506158447265625,
+        0.6428715006510417,
+        0.8253582763671875
+      ],
+      "split": "train",
+      "source_sha256": "7206733b5e4c8ebb30c92c94c65ac4793b1b2243e1132cab64d743a429b304c1"
+    },
+    {
+      "id": "054_IMG_3144",
+      "sku": "demo-colgate",
+      "sha256": "528757297c1d3e1b25fee28178dc5d2155684abda8ca5ffc9ce98373f6885b52",
+      "box": [
+        0.40294440375434026,
+        0.27551523844401044,
+        0.6096005588107639,
+        0.8587362670898437
+      ],
+      "split": "train",
+      "source_sha256": "2ed86970fcb9bb971f2a75cf7b9ad539bce0cfb57978ad3d2d20b64e58890898"
+    },
+    {
+      "id": "055_IMG_3145",
+      "sku": "demo-colgate",
+      "sha256": "64e58329761f886981efef9a5a3e2aa34f672d31c160e7dca5b3afe3b9550061",
+      "box": [
+        0.28689734564887154,
+        0.2780382537841797,
+        0.553219740125868,
+        0.8683180745442708
+      ],
+      "split": "test",
+      "source_sha256": "e0e3b3eadb3f7f256ea7532c06775708d4b9dde9bf8e5e56e9e97cf1de93778c"
+    },
+    {
+      "id": "056_IMG_3146",
+      "sku": "demo-coca",
+      "sha256": "52a4ad7e6b0ead700b60e3d2d40464d85745a4df2854f85dc2566e63a9682374",
+      "box": [
+        0.26688045925564235,
+        0.05961218516031901,
+        0.6203736707899306,
+        0.926728006998698
+      ],
+      "split": "val",
+      "source_sha256": "4bb8c7c4915238cf2fbf3a9bc2ac23548b623086348c0c3142c3cb1b8fea118d"
+    },
+    {
+      "id": "057_IMG_3147",
+      "sku": "demo-coca",
+      "sha256": "84fcb87f192255a6194614f170d714765a91816558fb8d7766a063d8b8c5052c",
+      "box": [
+        0.0036554633246527776,
+        0.128262456258138,
+        0.677988755967882,
+        0.7794859313964844
+      ],
+      "split": "train",
+      "source_sha256": "dde0fab36d1255ba13439fe45c378f9483c9716c853bd4913c11f40d3571f8ff"
+    },
+    {
+      "id": "058_IMG_3148",
+      "sku": "demo-coca",
+      "sha256": "815d993fcf66f71d2644e581379844eb268d71120f2a421066e59f592b429cdd",
+      "box": [
+        0.3308035956488715,
+        0.09210392634073893,
+        0.6915410698784722,
+        0.9641177368164062
+      ],
+      "split": "train",
+      "source_sha256": "0942d88b84782f18f75824b2ca582acf94fb8bf57f9c204b5a11a42e7a47dd43"
+    },
+    {
+      "id": "059_IMG_3149",
+      "sku": "demo-coca",
+      "sha256": "35f743f13a391f72252a7419fd0ddb8f8befb0b49cd89975fe401507c7808e9f",
+      "box": [
+        0.29969818115234376,
+        0.06253379821777344,
+        0.6958031548394097,
+        0.9912233479817708
+      ],
+      "split": "test",
+      "source_sha256": "2c0e47bbfb30581a58e70ada2749f18722d635f1118075347826eeb6beb46beb"
+    },
+    {
+      "id": "060_IMG_3150",
+      "sku": "demo-coca",
+      "sha256": "146572db32f441c58837e4b6fe821515140738d6a9c42f790b55570ebed3f78f",
+      "box": [
+        0.2920948961046007,
+        0.06844663619995117,
+        0.6806748453776041,
+        0.9940261840820312
+      ],
+      "split": "test",
+      "source_sha256": "38a286d214df2fcf65d7d99ad58fb97c63bce5e0d731601fbf5197b9fe5abc14"
+    },
+    {
+      "id": "061_IMG_3151",
+      "sku": "demo-coca",
+      "sha256": "44d28efd6442a07d2d10617b5921345b81b4c7c04f7dca4e44e9838fb8b0ae7a",
+      "box": [
+        0.2626727294921875,
+        0.06876510620117188,
+        0.6600343831380209,
+        0.9938810221354166
+      ],
+      "split": "train",
+      "source_sha256": "bb2cd066c87dba02ea7f1762f36df52b8a7fc844ff9a0cc1d162f078748ac5e7"
+    },
+    {
+      "id": "062_IMG_3152",
+      "sku": "demo-nutella",
+      "sha256": "1add851909086c2555d7fb78f286048eec76847fc0c11c193b65a9e9427982ae",
+      "box": [
+        0.2907077365451389,
+        0.3321648915608724,
+        0.6516086832682292,
+        0.6889484151204427
+      ],
+      "split": "train",
+      "source_sha256": "891893fe48ed4e226f275984c256c2bd32a031e83ed84431457fc5f2b072b3f0"
+    },
+    {
+      "id": "063_IMG_3153",
+      "sku": "demo-nutella",
+      "sha256": "ff635ad448d2d196997ff85c096ad88804c107380882528673b6de4cb7c0b6ce",
+      "box": [
+        0.2681875271267361,
+        0.35726656595865885,
+        0.6153943549262153,
+        0.7555917358398437
+      ],
+      "split": "test",
+      "source_sha256": "ddbf53087f0d5972900115d739ff7bc4db6a9a26ec4d177f3ad74c01ecc1068d"
+    },
+    {
+      "id": "064_IMG_3154",
+      "sku": "demo-nutella",
+      "sha256": "0168469246e2cb22257f760d68d6fae0bc7f65581da28a22f21e312e68b7f338",
+      "box": [
+        0.2562591383192274,
+        0.3242456817626953,
+        0.6176666937934028,
+        0.6981006876627605
+      ],
+      "split": "test",
+      "source_sha256": "0639b11adcbe5021b6afcb8891c153594e58561f6467e03fbd121098b1b5ee91"
+    },
+    {
+      "id": "065_IMG_3155",
+      "sku": "demo-nutella",
+      "sha256": "459879ef8cc68786bd6755961ef21a75e8aae0388c062e84e6c82a269f782432",
+      "box": [
+        0.274927978515625,
+        0.3327288055419922,
+        0.6428074815538194,
+        0.708763173421224
+      ],
+      "split": "train",
+      "source_sha256": "c1af4e7145477bd7717dcdbc95d04ef73f34b6e82b955befaff5ed969e703b77"
+    },
+    {
+      "id": "066_IMG_3156",
+      "sku": "demo-nutella",
+      "sha256": "fb997800e311a6f13436e8a0dc687cc0c145e4f98cea1cba5a00fd59e678c51b",
+      "box": [
+        0.22423107571072048,
+        0.3322186533610026,
+        0.5727309163411458,
+        0.7231047058105469
+      ],
+      "split": "train",
+      "source_sha256": "0bb194a80d6d1e860b4b0b1192aeed27ab7670dbf670bdd9941aa895a5dd8c27"
+    },
+    {
+      "id": "067_IMG_3157",
+      "sku": "demo-nutella",
+      "sha256": "038641c5433f4b755e835c02d3f7854703ce77166661f2455e54a3eaffa002a1",
+      "box": [
+        0.2734840562608507,
+        0.3393048095703125,
+        0.6072292751736111,
+        0.715142822265625
+      ],
+      "split": "train",
+      "source_sha256": "da012cf797aefabf159c81ce7634b1d2a148903714104f8560c5b9b20c55a9bf"
+    },
+    {
+      "id": "068_IMG_3158",
+      "sku": "demo-nutella",
+      "sha256": "a576be11d7bfd0566a8ac9e98eb6f348934b6a897cf94b1ac3d9bd8069064bc9",
+      "box": [
+        0.24062981499565972,
+        0.34188138326009115,
+        0.6097757975260417,
+        0.7040084838867188
+      ],
+      "split": "val",
+      "source_sha256": "a5ffc2bcfca15cc7170f10c4f8fe666d794d81cd6a0426c9ae6e6362c17375af"
+    },
+    {
+      "id": "069_IMG_3159",
+      "sku": "demo-laka",
+      "sha256": "5b875bf61af7c2d6af60eb5daa938218d6316d69f8226db82f3f06825e2a12c2",
+      "box": [
+        0.3476142374674479,
+        0.2658623504638672,
+        0.6611899820963542,
+        0.7635984293619792
+      ],
+      "split": "train",
+      "source_sha256": "e922e2c635cb9276e8c451d0cf5ed1fec709ad9e9365297d3a824b3e7e5d2883"
+    },
+    {
+      "id": "070_IMG_3160",
+      "sku": "demo-laka",
+      "sha256": "323f044fe6d4149128869a3847f7a6011c1326d9a07e5b4ee1ee7722d4bcf468",
+      "box": [
+        0.5,
+        0.21,
+        0.6,
+        0.89
+      ],
+      "split": "train",
+      "source_sha256": "25ceee7f6762a406914b397a2846b921c6cff50cb6ba498d79a0b841cbd059c6"
+    },
+    {
+      "id": "071_IMG_3161",
+      "sku": "demo-laka",
+      "sha256": "d5444031d012ca1cdbefc550798adf21a54a15c97ba9fe46ea267125dc4ce81f",
+      "box": [
+        0.47,
+        0.33,
+        0.61,
+        0.65
+      ],
+      "split": "val",
+      "source_sha256": "d09e4abe4691990cd59144446d4898b860fb259e808ef79168c407e2f087b721"
+    },
+    {
+      "id": "072_IMG_3162",
+      "sku": "demo-laka",
+      "sha256": "6fb12765492b379e0c5ca46f93bb15ac04f2391f747f6bedf03078f48a9256cf",
+      "box": [
+        0.12,
+        0.43,
+        0.88,
+        0.49
+      ],
+      "split": "test",
+      "source_sha256": "d154e8904e6fef7d52997ae1d37368c9269d3ab9f892fa4ac3561a7f461c8951"
+    },
+    {
+      "id": "073_IMG_3163",
+      "sku": "demo-laka",
+      "sha256": "31feff69202d0ede49675c1bb25d8acf734f866a6ad7482296abf186fe118a7b",
+      "box": [
+        0.47,
+        0.6,
+        0.6,
+        0.85
+      ],
+      "split": "test",
+      "source_sha256": "d290bd9c6c034bc410cb476640faae61c7a126bd4d18f44da60568497c0c4bf9"
+    },
+    {
+      "id": "074_IMG_3165",
+      "sku": "demo-casaflor",
+      "sha256": "06398f8f8976672befc48099a22e10fc4ab3785e3ed421c6c96c27b378d0fd21",
+      "box": [
+        0.2932018364800347,
+        0.4779603068033854,
+        0.6326048448350694,
+        0.8494017028808594
+      ],
+      "split": "train",
+      "source_sha256": "21d193fdf4d98cd25a3a1851eb20eb95f0fc4954910ecc264cd6a5f57c440490"
+    },
+    {
+      "id": "075_IMG_3166",
+      "sku": "demo-casaflor",
+      "sha256": "945239823cd555a74ca5301b9f35906509fa164ddfdf4dda2838cbfb2fc382ac",
+      "box": [
+        0.2953182305230035,
+        0.1253152847290039,
+        0.5792459445529514,
+        0.8820751953125
+      ],
+      "split": "train",
+      "source_sha256": "185457a9259407c0a686819a9a22736b4382bbba54162841fddebd611c63e1d2"
+    },
+    {
+      "id": "076_IMG_3167",
+      "sku": "demo-casaflor",
+      "sha256": "9eeb46367f3ee7da4066b521f2301f1b9fe8452ec78dba19493aefbf36bcfd85",
+      "box": [
+        0.3420988294813368,
+        0.16285181681315103,
+        0.7418971082899306,
+        0.890178934733073
+      ],
+      "split": "test",
+      "source_sha256": "fa10a808a82a71ef4755ddc7ff086134a38ad440c44bd1aec4030df7b4531b36"
+    },
+    {
+      "id": "077_IMG_3168",
+      "sku": "demo-casaflor",
+      "sha256": "75b88c26d73c1c162a6b02799edae6b54ed6f982d3dc08843212d53875ccf577",
+      "box": [
+        0.31779639350043404,
+        0.18281843821207683,
+        0.6051866997612847,
+        0.926879170735677
+      ],
+      "split": "val",
+      "source_sha256": "4e6704f4d34ab061c14820b00c114823bfc534da40c025888d35bda1fde7ad37"
+    }
+  ],
+  "boxes": "Grounding DINO proposals, visually reviewed; not detector ground truth"
+}
