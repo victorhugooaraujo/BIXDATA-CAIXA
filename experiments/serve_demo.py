@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 
-def build_app(folder, device="cuda", ocr=True):
+def build_app(folder, device="cuda", ocr=True, *, bridge_token=None):
     from PIL import Image
 
     from caixa_inteligente.demo.api import create_app
@@ -43,7 +43,7 @@ def build_app(folder, device="cuda", ocr=True):
                 image.thumbnail((1600, 1600))
                 image.convert("RGB").save(preview, quality=95)
         samples.append({"id": sample["id"], "path": str(preview), "name": names[sample["sku"]]})
-    return create_app(infer, catalog, folder / "state", samples), infer
+    return create_app(infer, catalog, folder / "state", samples, bridge_token=bridge_token), infer
 
 
 def main():
@@ -55,12 +55,20 @@ def main():
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--device", default="cuda", choices=["cuda", "cpu"])
     parser.add_argument("--no-ocr", action="store_true")
+    parser.add_argument("--bridge-config", type=Path, help="Configuração privada da ponte móvel")
     args = parser.parse_args()
     torch.set_num_threads(4)
     register_heif_opener()
     source = Path(os.environ.get("CAIXA_DATA_ROOT", ROOT))
     os.environ.setdefault("TORCH_HOME", str(source / ".cache/torch"))
-    app, _ = build_app(ROOT / "artifacts/demo-training", args.device, not args.no_ocr)
+    token = None
+    if args.bridge_config:
+        token = json.loads(args.bridge_config.read_text(encoding="utf-8"))["BRIDGE_TOKEN"]
+        if not isinstance(token, str) or len(token) < 32:
+            raise ValueError("Token da ponte deve ter ao menos 32 caracteres.")
+    app, _ = build_app(
+        ROOT / "artifacts/demo-training", args.device, not args.no_ocr, bridge_token=token
+    )
     uvicorn.run(app, host="127.0.0.1", port=args.port, access_log=False)
 
 

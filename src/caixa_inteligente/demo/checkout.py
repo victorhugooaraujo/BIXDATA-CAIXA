@@ -71,7 +71,8 @@ class CheckoutStore:
 
     def close_session(self, session):
         with self._db() as db:
-            self._open(db, session)
+            if not db.execute("SELECT 1 FROM sessions WHERE id=?", (session,)).fetchone():
+                raise CheckoutError("Sessão inexistente.")
             db.execute("UPDATE sessions SET closed=1 WHERE id=?", (session,))
 
     def observe(self, session, event, image_hash, sku, decision, *, now=None, ttl=30):
@@ -149,7 +150,10 @@ class CheckoutStore:
 
     def receipt(self, session):
         with self._db() as db:
-            if not db.execute("SELECT 1 FROM sessions WHERE id=?", (session,)).fetchone():
+            session_row = db.execute(
+                "SELECT closed FROM sessions WHERE id=?", (session,)
+            ).fetchone()
+            if not session_row:
                 raise CheckoutError("Sessão inexistente.")
             lines = [
                 dict(row)
@@ -161,6 +165,7 @@ class CheckoutStore:
             ]
         return {
             "session_id": session,
+            "closed": bool(session_row["closed"]),
             "items": lines,
             "total_cents": sum(line["price_cents"] for line in lines),
             "simulated": True,

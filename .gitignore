@@ -11,3 +11,7 @@ data/
 artifacts/
 .cache/
 .prototype-transfer.ps1
+node_modules/
+.vercel/
+.env.*
+!.env.example

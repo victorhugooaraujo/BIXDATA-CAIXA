@@ -1,6 +1,7 @@
 """Loopback-only assisted demo. Inference never writes a receipt or chooses a price."""
 
 import hashlib
+import hmac
 import tempfile
 import threading
 import warnings
@@ -25,17 +26,31 @@ class Confirmation(BaseModel):
     sku: str = Field(min_length=1, max_length=128)
 
 
-def create_app(infer, catalog, state_dir, samples=None):
-    app = FastAPI(title="BIXDATA — demonstração assistida", docs_url=None, redoc_url=None)
-    app.add_middleware(
-        TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "testserver"]
+def create_app(infer, catalog, state_dir, samples=None, *, bridge_token=None):
+    if bridge_token is not None and (not isinstance(bridge_token, str) or len(bridge_token) < 32):
+        raise ValueError("Token da ponte deve ter ao menos 32 caracteres.")
+    app = FastAPI(
+        title="BIXDATA — demonstração assistida",
+        docs_url=None,
+        redoc_url=None,
+        openapi_url=None if bridge_token else "/openapi.json",
     )
+    hosts = ["127.0.0.1", "localhost", "testserver"]
+    if bridge_token:
+        hosts.append("*.trycloudflare.com")
+    app.add_middleware(TrustedHostMiddleware, allowed_hosts=hosts)
     store = CheckoutStore(Path(state_dir) / "checkout.sqlite3", catalog)
     samples = {sample["id"]: sample for sample in (samples or [])}
     lock = threading.Lock()
 
     @app.middleware("http")
     async def local_boundary(request: Request, call_next):
+        if bridge_token:
+            authorization = request.headers.get("authorization", "")
+            if not hmac.compare_digest(authorization.encode(), f"Bearer {bridge_token}".encode()):
+                return JSONResponse({"detail": "Ponte não autorizada."}, status_code=401)
+            if not request.url.path.startswith("/api/"):
+                return JSONResponse({"detail": "Rota inexistente."}, status_code=404)
         origin = request.headers.get("origin")
         allowed = {f"http://{request.headers.get('host', '')}"}
         if origin and origin not in allowed:
