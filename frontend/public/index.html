@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#a90404">
+  <meta name="description" content="Demonstração experimental de reconhecimento visual de produtos, com revisão humana e cupom fictício.">
+  <title>Caixa inteligente · demonstração</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1><img class="logo" src="/logo.jpg" alt="Mega Tejotão"><span class="brand">Caixa inteligente</span></h1>
+    <span class="connection" id="connection">Conectando…</span>
+  </header>
+  <div class="experiment" role="note">
+    <b>PROTÓTIPO EXPERIMENTAL</b>
+    <span>Modelo não validado para produção. Pode confundir produtos, marcas, tamanhos e variantes.</span>
+    <small>Confirmação humana obrigatória · Todos os preços são fictícios (R$ 1,00) · Sem pagamento ou documento fiscal.</small>
+  </div>
+  <section class="access card" id="access" aria-labelledby="accessTitle" hidden>
+    <span class="eyebrow">ACESSO À DEMONSTRAÇÃO</span>
+    <h2 id="accessTitle">Vamos testar o caixa visual?</h2>
+    <p>Digite o código da demonstração. O reconhecimento é processado no PC do responsável pelo protótipo.</p>
+    <form id="accessForm">
+      <label for="accessCode">Código de acesso</label>
+      <div class="row"><input id="accessCode" type="password" autocomplete="current-password" required maxlength="128" placeholder="Código da demonstração"><button class="primary" type="submit" id="unlock">Entrar</button></div>
+    </form>
+    <p id="accessMessage" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+  <main id="workspace" hidden>
+    <section class="capture-column" aria-labelledby="captureTitle">
+      <div class="section-heading"><div><span class="eyebrow">01 · APRESENTE O PRODUTO</span><h2 id="captureTitle">Uma foto. Um produto por vez.</h2></div><span class="step-tag">Câmera do celular</span></div>
+      <div class="stage" id="stage">
+        <video id="video" autoplay playsinline muted hidden></video>
+        <canvas id="preview" hidden aria-label="Foto enviada e produto localizado"></canvas>
+        <div class="guide" id="guide" aria-hidden="true"></div>
+        <div class="stage-message" id="stageMessage"><div><span class="camera-symbol" aria-hidden="true">▣</span><b>Centralize uma embalagem</b><p>Deixe a marca e o tamanho visíveis.<br>Abra a câmera ou escolha uma foto.</p></div></div>
+        <span class="stage-badge">Análise experimental</span>
+      </div>
+      <div class="row capture-actions">
+        <button class="primary capture-button" id="capture" disabled>Tirar foto e reconhecer</button>
+        <button id="openCamera">Abrir câmera ao vivo</button>
+        <button id="upload">Escolher foto</button>
+        <button id="stopCamera" hidden>Fechar câmera</button>
+        <input id="cameraFile" type="file" accept="image/*" capture="environment" hidden>
+        <input id="galleryFile" type="file" accept="image/*,.heic,.heif" hidden>
+      </div>
+      <p class="hint">A foto é reduzida no celular antes do envio. O PC precisa estar ligado e conectado.</p>
+      <p id="feedback" class="feedback" role="status" aria-live="polite">Preparando demonstração…</p>
+      <button id="reconnect" hidden>Reconectar</button>
+      <section class="card result" id="result" aria-labelledby="resultTitle" hidden>
+        <span class="eyebrow">02 · CONFIRA O RESULTADO</span>
+        <div class="result-heading"><img id="crop" alt="Recorte da embalagem localizada" hidden><div><h2 id="resultTitle">Confirme qual é o produto</h2><p id="analysisTime" class="hint"></p></div></div>
+        <p class="review-note" id="reviewNote">A sugestão pode estar errada. Confira marca, variante e tamanho antes de confirmar.</p>
+        <div id="candidates" class="candidates" aria-label="Candidatos sugeridos"></div>
+        <p class="hint" id="scoreNote">Similaridade visual não é probabilidade de acerto. Os candidatos seguem a classificação do modelo.</p>
+        <details><summary>Texto lido na embalagem (OCR)</summary><p id="ocr" class="ocr"></p></details>
+        <label for="search">Corrigir pelo catálogo demonstrativo</label>
+        <input id="search" type="search" placeholder="Buscar nome ou SKU" autocomplete="off">
+        <div id="catalogResults" class="catalog-results"></div>
+        <p id="selection" class="selection">Selecione um produto para confirmar.</p>
+        <div class="row"><button class="primary" id="confirm" disabled>Confirmar 1 unidade</button><button id="discard">Descartar foto</button></div>
+        <p class="hint">A confirmação vence após três minutos. Outra unidade exige outra apresentação.</p>
+      </section>
+      <details class="card samples"><summary>Testar com fotos reservadas da demonstração</summary><label for="samples">Amostra de teste</label><select id="samples"><option value="">Escolha uma foto…</option></select><p class="hint">Essas fotos não entraram no treinamento. O nome esperado não é enviado ao reconhecedor.</p></details>
+    </section>
+    <aside>
+      <section class="receipt" aria-labelledby="receiptTitle">
+        <span class="receipt-label">CUPOM SIMULADO · SEM VALOR FISCAL</span>
+        <h2 id="receiptTitle"><span>Compra de demonstração</span><span id="count">0 itens</span></h2>
+        <div id="items"><p class="empty">Nenhuma unidade confirmada.<br>Apresente o primeiro produto.</p></div>
+        <div class="total"><span>Total fictício</span><strong id="total">R$ 0,00</strong></div>
+        <button class="finish" id="done" disabled>Finalizar demonstração</button>
+        <p class="hint">O som ocorre após a confirmação do simulador. Nenhuma cobrança é realizada.</p>
+        <p class="session" id="sessionLabel"></p>
+        <p id="receiptFeedback" class="feedback" role="status"></p>
+      </section>
+      <section class="card about"><span class="eyebrow">O QUE ESTAMOS VALIDANDO</span><h2>Reconhecimento, com revisão.</h2><p>Este modelo foi preparado com 11 produtos fotografados e 200 classes públicas RPC. Produtos fora desse conjunto podem receber sugestões incorretas.</p><p class="hint">Esta apresentação não comprova precisão comercial, integração com o PDV ou funcionamento para os 20 mil SKUs de uma loja.</p></section>
+    </aside>
+  </main>
+  <footer>Demonstração BIXDATA · Processamento de imagem no PC · Sem cadastro de clientes ou pagamento</footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

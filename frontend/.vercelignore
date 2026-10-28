@@ -1,0 +1,5 @@
+tests/
+gateway-tests/
+node_modules/
+.env*
+*.log
