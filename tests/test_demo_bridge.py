@@ -60,3 +60,20 @@ def test_repeated_close_after_lost_ack_keeps_session_closed(tmp_path):
         assert client.post(f"/api/sessions/{session}/close").status_code == 200
         assert client.post(f"/api/sessions/{session}/close").status_code == 200
         assert client.get(f"/api/sessions/{session}/receipt").json()["closed"] is True
+
+
+def test_windows_utf8_bom_private_configuration_is_readable_without_gpu(tmp_path):
+    import importlib.util
+    from pathlib import Path
+
+    source = Path(__file__).resolve().parents[1] / "experiments/serve_demo.py"
+    spec = importlib.util.spec_from_file_location("demo_launcher", source)
+    launcher = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(launcher)
+
+    config = tmp_path / "private.json"
+    config.write_text('{"BRIDGE_TOKEN":"' + TOKEN + '"}', encoding="utf-8-sig")
+    assert launcher.read_bridge_token(config) == TOKEN
+    config.write_text('{"BRIDGE_TOKEN":"short"}', encoding="utf-8")
+    with pytest.raises(ValueError, match="32"):
+        launcher.read_bridge_token(config)

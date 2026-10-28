@@ -10,6 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 
+def read_bridge_token(path):
+    token = json.loads(path.read_text(encoding="utf-8-sig"))["BRIDGE_TOKEN"]
+    if not isinstance(token, str) or len(token) < 32:
+        raise ValueError("Token da ponte deve ter ao menos 32 caracteres.")
+    return token
+
+
 def build_app(folder, device="cuda", ocr=True, *, bridge_token=None):
     from PIL import Image
 
@@ -63,9 +70,7 @@ def main():
     os.environ.setdefault("TORCH_HOME", str(source / ".cache/torch"))
     token = None
     if args.bridge_config:
-        token = json.loads(args.bridge_config.read_text(encoding="utf-8"))["BRIDGE_TOKEN"]
-        if not isinstance(token, str) or len(token) < 32:
-            raise ValueError("Token da ponte deve ter ao menos 32 caracteres.")
+        token = read_bridge_token(args.bridge_config)
     app, _ = build_app(
         ROOT / "artifacts/demo-training", args.device, not args.no_ocr, bridge_token=token
     )
