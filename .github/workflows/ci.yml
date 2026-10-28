@@ -29,3 +29,7 @@ jobs:
       - run: uv run --locked ruff check .
       - run: uv run --locked ruff format --check .
       - run: uv run --locked pytest
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test --prefix frontend

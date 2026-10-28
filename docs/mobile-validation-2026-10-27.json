@@ -1,0 +1,19 @@
+{
+  "site": "https://bixdata-caixa-demo.vercel.app",
+  "simulated": true,
+  "external_seconds": 2.514948700001696,
+  "sample_id": "063_IMG_3153",
+  "top1": "demo-nutella",
+  "anonymous_denied": true,
+  "ack_retry_one_line": true,
+  "close_retry_ok": true,
+  "confirmed_lines": 1,
+  "physical_phone_camera_tested": false,
+  "python_tests_passed": 138,
+  "node_tests_passed": 24,
+  "mysql_integration_skipped": true,
+  "browser_upload_confirmed": "demo-colgate",
+  "browser_console_errors": 0,
+  "production_ready": false,
+  "deployment_id": "dpl_Ev6tYLuam9h8Jevin5S7sJR6e4Pe"
+}

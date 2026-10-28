@@ -1,5 +1,9 @@
 # Caixa inteligente — protótipo 0.1
 
+**Demonstração no celular:** [abrir site](https://bixdata-caixa-demo.vercel.app),
+com câmera e reconhecimento no PC. O código de acesso é fornecido separadamente.
+Veja [uso e manutenção da ponte](docs/mobile-demo.md). Modelo experimental e cupom simulado.
+
 **Demonstração assistida com interface local:** execute `.\start-demo.ps1` e abra
 `http://127.0.0.1:8765`. Usa suas fotos + RPC no treinamento, localização da embalagem,
 DINOv2 e evidência OCR. Veja [como executar, resultados e limites](docs/functional-demo.md).
